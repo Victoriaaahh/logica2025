@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int L;           // Linha da matriz a ser considerada
+    char T;          // Operação ('S' ou 'M')
+    double M[12][12]; // Matriz de 12x12
+    double soma = 0.0;
+    
+    // Ler o número da linha (0 a 11)
+    scanf("%d", &L);
+    
+    // Ler o caractere da operação (S ou M)
+    scanf(" %c", &T); // espaço antes de %c para consumir o '\n' restante
+
+    // Ler os 144 valores da matriz
+    for (int i = 0; i < 12; i++) {
+        for (int j = 0; j < 12; j++) {
+            scanf("%lf", &M[i][j]);
+        }
+    }
+
+    // Calcular a soma dos elementos da linha L
+    for (int j = 0; j < 12; j++) {
+        soma += M[L][j];
+    }
+
+    // Imprimir o resultado
+    if (T == 'S') {
+        printf("%.1lf\n", soma);
+    } else if (T == 'M') {
+        printf("%.1lf\n", soma / 12.0);
+    }
+
+    return 0;
+}
