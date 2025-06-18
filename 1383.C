@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define SIZE 9
 
-int check_sudoku(int sudoku[SIZE][SIZE]) {
+int checar_sudoku(int sudoku[SIZE][SIZE]) {
     int i, j, k;
     
     for (i = 0; i < SIZE; i++) {
@@ -50,7 +50,7 @@ int main() {
         }
 
         printf("Instancia %d\n", inst);
-        if (check_sudoku(matriz)) {
+        if (checar_sudoku(matriz)) {
             printf("SIM\n");
         } else {
             printf("NAO\n");
